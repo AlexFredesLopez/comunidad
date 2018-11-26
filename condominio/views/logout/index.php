@@ -10,7 +10,7 @@ if(!Loader::isLoggedIn($config['id_administrador']) || !Loader::isLoggedIn($conf
 }
 ?>
 <!-- Page Content -->
-<meta http-equiv="refresh" content="3; URL=../landing/">
+<meta http-equiv="refresh" content="3; URL=../../landing/">
 <div class="container firstcontent">
     <div class="row text-center">
         <div class="col-md-6 col-sm-offset-3">
@@ -21,11 +21,12 @@ if(!Loader::isLoggedIn($config['id_administrador']) || !Loader::isLoggedIn($conf
     </div>
 </div>
 
-<?php include __DIR__."/../../includes/php/footer.php";?>
+<?php include __DIR__."/../../../includes/php/footer.php";?>
 
 <!-- /.container -->
 
 </body>
 </html>
 <?php Loader::destroySession();
+exit;
 $_SESSION['logged'] = true;?>

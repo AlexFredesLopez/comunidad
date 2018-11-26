@@ -61,7 +61,7 @@ class Loader{
 
         if (self::isLoggedIn($config['id_administrador'])) {
             $i = 0;
-            require_once __DIR__ . "/connection/connectionMySqL.php";
+            require ('connection/connectionMySql.php');
             $connection = ConnectionMysql::getInstance()->getConnection();
             $query = "SELECT * FROM usuario";
             $usersQuery = mysqli_query($connection, $query);
@@ -77,6 +77,28 @@ class Loader{
             }
         }
         return $users;
+    }
+
+    public static function listarCondominios(){
+        $config = self::getConfig();
+        $condominio = array();
+
+        if (self::isLoggedIn($config['id_administrador'])) {
+            $i = 0;
+            require ('connection/connectionMySql.php');
+            $connection = ConnectionMysql::getInstance()->getConnection();
+            $query = "SELECT * FROM condominio";
+            $condominioQuery = mysqli_query($connection, $query);
+            while ($row = $condominioQuery->fetch_array()) {
+                $condominio[$i]['id_condominio'] = $row['id_condominio'];
+                $condominio[$i]['nombre_condominio'] = $row['nombre_condominio'];
+                $condominio[$i]['alias'] = $row['alias'];
+                $condominio[$i]['activo'] = $row['activo'];
+                $condominio[$i]['activoName'] = isset($row['activo']) && $row['activo'] == 1 ? 'Activo' : 'Inactivo';
+                $i++;
+            }
+        }
+        return $condominio;
     }
 }
 

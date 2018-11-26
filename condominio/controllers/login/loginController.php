@@ -1,24 +1,30 @@
 <?php
-require_once __DIR__."/../../../app/logger.php";
-
+ini_set('display_errors', 1);
+require ('../../../app/logger.php');
 
 
 if(empty($_POST)) {
-    require_once __DIR__ . "/../../../app/loader.php";
+    require ('../../../app/loader.php');
     $urlPath = Loader::getUrlBase();
     header("location: ".$urlPath."condominio/views/landing/");
 }else {
-    require_once __DIR__."/../../../app/connection/connectionMySqL.php";
+    require ('../../../app/loader.php');
+    require ('../../../app/connection/connectionMySql.php');
+    
+    // require_once __DIR__ . "/../../app/connection/connectionMySqL.php";
     $connection = ConnectionMysql::getInstance()->getConnection();
+ 
     $config = Loader::getConfig();
     $user = $_POST['username'];
     $pass = $_POST['pass'];
-    $query = "SELECT  * FROM USUARIO WHERE username = '" . $user ."' AND password = '". $pass . "';";
-
+    $query = "SELECT  * FROM usuario WHERE username = '" . $user ."' AND password = '". $pass . "';";
+  
     $login = mysqli_query($connection, $query);
     if(mysqli_num_rows($login) > 0) {
         $row = $login->fetch_array();
-        require_once __DIR__."/../../models/usuario/Usuario.php";
+        require ('../../models/usuario/Usuario.php');
+    
+        // require_once __DIR__."/../../models/usuario/Usuario.php";
 
         $usuario = new Usuario;
         $usuario->setId($row['id_usuario']);

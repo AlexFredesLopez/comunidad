@@ -10,18 +10,53 @@
             <ul>
                 <li><a href="../landing/">Home</a></li>
                 <li>
-                    <a href="#" class="icon fa-angle-down">Layouts</a>
+                    <a href="#" class="icon fa-angle-down">Mantenedores</a>
                     <ul>
-                        <li><a href="../register-user/">Agregar Usuario</a></li>
-                        <li><a href="../nosotros/">¿Quienes Somos?</a></li>
-                        <li><a href="../verUsuarios/">Ver Usuarios</a></li>
                         <li>
-                            <a href="#">Submenu</a>
+                            <a href="#">Usuario</a>
                             <ul>
-                                <li><a href="#">Option One</a></li>
-                                <li><a href="#">Option Two</a></li>
-                                <li><a href="#">Option Three</a></li>
-                                <li><a href="#">Option Four</a></li>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/user/register-user/">Agregar Usuario</a></li>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/user/editarUsuario/">Editar Usuario</a></li>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/user/eliminarUsuario/">Eliminar Usuario</a></li>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/user/verUsuarios/">Ver Usuarios</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        
+                            <a href="#">Condominio</a>
+                            <ul>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/condominio/agregarCondominio/">Agregar Condominio</a></li>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/condominio/editarCondominio/">Editar Condominio</a></li>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/condominio/eliminarCondominio/">Eliminar Condominio</a></li>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/condominio/verCondominios/">Ver Condominio</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Propietario</a>
+                            <ul>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/propietario/agregarPropietario/">Agregar Propietario</a></li>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/propietario/editarPropietario/">Editar Propietario</a></li>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/propietario/eliminarPropietario/">Eliminar Propietario</a></li>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/propietario/verPropietarios/">Ver Propietario</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Tipo Vivienda</a>
+                            <ul>
+                                <li><a href="#">Agregar Tipo Vivienda</a></li>
+                                <li><a href="#">Editar Tipo Vivienda</a></li>
+                                <li><a href="#">Eliminar Tipo Vivienda</a></li>
+                                <li><a href="#">Ver Tipo Vivienda</a></li>
+                            </ul>
+                        </li>
+
+                         <li>
+                            <a href="#">Vivienda</a>
+                            <ul>
+                                <li><a href="#">Agregar Vivienda</a></li>
+                                <li><a href="#">Editar Vivienda</a></li>
+                                <li><a href="#">Eliminar Vivienda</a></li>
+                                <li><a href="#">Ver Vivienda</a></li>
                             </ul>
                         </li>
                     </ul>
