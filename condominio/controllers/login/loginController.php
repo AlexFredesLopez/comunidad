@@ -17,7 +17,7 @@ if(empty($_POST)) {
     $config = Loader::getConfig();
     $user = $_POST['username'];
     $pass = $_POST['pass'];
-    $query = "SELECT  * FROM usuario WHERE username = '" . $user ."' AND password = '". $pass . "';";
+    $query = "SELECT  * FROM usuario WHERE username = '" . $user ."' AND password = '". $pass . "' AND activo = 1;";
   
     $login = mysqli_query($connection, $query);
     if(mysqli_num_rows($login) > 0) {

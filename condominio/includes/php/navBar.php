@@ -12,18 +12,12 @@
                 <li>
                     <a href="#" class="icon fa-angle-down">Layouts</a>
                     <ul>
-                        <li><a href="../registro/">Regístrate</a></li>
-                        <li><a href="../nosotros/">¿Quienes Somos?</a></li>
-                        <li><a href="elements.html">Elements</a></li>
-                        <li>
-                            <a href="#">Submenu</a>
-                            <ul>
-                                <li><a href="#">Option One</a></li>
-                                <li><a href="#">Option Two</a></li>
-                                <li><a href="#">Option Three</a></li>
-                                <li><a href="#">Option Four</a></li>
-                            </ul>
-                        </li>
+                       
+                        <li><a href="<?php echo Loader::getUrlBase();?>views/evento/register-evento/">Agregar Evento</a></li>
+                        <li><a href="#">Option Two</a></li>
+                        <li><a href="#">Option Three</a></li>
+                        <li><a href="#">Option Four</a></li>
+                            
                     </ul>
                 </li>
                 <li><a href="#" class="button">  <?php echo "Bienvenido(a) ".$usuario->getUsername();?></a></li>

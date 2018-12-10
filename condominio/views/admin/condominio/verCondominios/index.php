@@ -36,6 +36,8 @@ $perfil = $config['id_administrador'];
                     <th class="text-center" style="font-size: 20px;">Nombre Condominio</th>
                     <th class="text-center" style="font-size: 20px;">Alias</th>
                     <th class="text-center" style="font-size: 20px;">Activo</th>
+                    <th class="text-center" style="font-size: 20px;">Editar</th>
+                    <th class="text-center" style="font-size: 20px;">Estados</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -45,6 +47,12 @@ $perfil = $config['id_administrador'];
                             <td style="font-size: 18px;"><?php echo $value['nombre_condominio'] ?></td>
                             <td style="font-size: 18px;"><?php echo $value['alias'] ?></td>     
                             <td style="font-size: 18px; color:<?php echo isset($value['activo']) && $value['activo'] == 1  ?'green' : 'red';?>"><?php echo $value['activoName'] ?></td>                                  
+                            <td style="font-size: 18px;"><a href="../editarCondominio/?id=<?php echo $value['id_condominio'] ?>">Editar</a></td>  
+                            <?php if($value['activo'] == 1){?>
+                                <td style="font-size: 18px;"><a style="cursor: pointer" onclick="desactivarCondominio('<?php echo $value['id_condominio']?>')"><span class="glyphicon glyphicon-remove"></span>Desactivar Condominio</a></td> 
+                            <?php }else{?>
+                                <td style="font-size: 18px;"><a style="cursor: pointer" onclick="activarCondominio('<?php echo $value['id_condominio']?>')"><span class="glyphicon glyphicon-remove"></span>Activar Condominio</a></td> 
+                            <?php }?>                        
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -57,6 +65,21 @@ $perfil = $config['id_administrador'];
         </div>
     </div>
 </section>
+
+
+<script type="text/javascript">
+    function desactivarCondominio(id) {
+        if(confirm('¿Está seguro de desactivar este condominio?')) {
+            document.location='../../../../controllers/admin/condominio/desactivar-condominio/desactivar-condominio.php?u='+id;
+        }
+    }
+    function activarCondominio(id) {
+        if(confirm('¿Está seguro de activar este condominio?')) {
+            document.location='../../../../controllers/admin/condominio/activar-condominio/activar-condominio.php?u='+id;
+        }
+    }
+</script>      
+
 
 <script language="javascript" type="text/javascript">
 var table3Filters = {

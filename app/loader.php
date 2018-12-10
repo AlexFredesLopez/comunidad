@@ -73,6 +73,7 @@ class Loader{
                 $users[$i]['username'] = $row['username'];
                 $users[$i]['password'] = $row['password'];
                 $users[$i]['perfil'] = $row['perfil'];
+                $users[$i]['activo'] = $row['activo'];
                 $i++;
             }
         }
@@ -100,6 +101,125 @@ class Loader{
         }
         return $condominio;
     }
+
+    public static function getIconStatus($modulo, $estado)
+    {
+        $icon = '<div class="status_ball"></div>';
+        if ($modulo == 'usuarios') {
+            switch ($estado) {
+                case 1:
+                    $icon = '<div class="status_ball status_ok" title="Publicado"></div>';
+                    break;
+                case 0:
+                    $icon = '<div class="status_ball status_dng" title="Eliminado"></div>';
+                    break;
+            }
+        } else if ($modulo == 'condominio') {
+            switch ($estado) {
+                case 0:
+                    $icon = '<div class="status_ball status_dng" title="Condominio Incactivo"></div>';
+                    break;
+                case 1:
+                    $icon = '<div class="status_ball status_ok" title="Condominio Activo"></div>';
+                    break;
+            }
+        } else if ($modulo == 'administracion-fondosybecas') {
+            switch ($estado) {
+                case 0:
+                    $icon = '<div class="status_ball status_dng" title="Publicación desactivada"></div>';
+                    break;
+                case 1:
+                    $icon = '<div class="status_ball status_ok" title="Publicación activada"></div>';
+                    break;
+            }
+        } else if ($modulo == 'administracion-fichas') {
+            switch ($estado) {
+                case 0:
+                    $icon = '<div class="status_ball" title="Ficha pendiente de aprobación"></div>';
+                    break;
+                case 1:
+                    $icon = '<div class="status_ball status_wrn" title="Ficha Aprobada"></div>';
+                    break;
+                case 2:
+                    $icon = '<div class="status_ball status_ok" title="Ficha con mentor asociado"></div>';
+                    break;
+                case 3:
+                    $icon = '<div class="status_ball status_dng" title="Ficha Rechazada"></div>';
+                    break;
+                case 4:
+                    $icon = '<div class="status_ball status_ok" title="Ficha cerrada"></div>';
+                    break;
+            }
+        }
+        return $icon;
+    }
+
+    public static function getUserById($id){
+        $config = self::getConfig();
+        $usuarioEdit = array();
+        require ('connection/connectionMySql.php');
+        if (self::isLoggedIn($config['id_administrador'])) {
+            $i = 0;
+         
+            $connection = ConnectionMysql::getInstance()->getConnection();
+            $query = "SELECT * FROM usuario where id_usuario = " .$id;
+            $condominioQuery = mysqli_query($connection, $query);
+            while ($row = $condominioQuery->fetch_array()) {
+                $usuarioEdit[$i]['id_usuario'] = $row['id_usuario'];
+                $usuarioEdit[$i]['nombre'] = $row['nombre'];
+                $usuarioEdit[$i]['apellido'] = $row['apellido'];
+                $usuarioEdit[$i]['email'] = $row['email'];
+                $usuarioEdit[$i]['username'] = $row['username'];
+                $i++;
+            }
+        }
+        return $usuarioEdit;
+       
+    }
+
+    public static function getCondominioById($id){
+        $config = self::getConfig();
+        $usuarioEdit = array();
+        require ('connection/connectionMySql.php');
+        if (self::isLoggedIn($config['id_administrador'])) {
+            $i = 0;
+         
+            $connection = ConnectionMysql::getInstance()->getConnection();
+            $query = "SELECT * FROM condominio where id_condominio = " .$id;
+            $condominioQuery = mysqli_query($connection, $query);
+            while ($row = $condominioQuery->fetch_array()) {
+                $usuarioEdit[$i]['id_condominio'] = $row['id_condominio'];
+                $usuarioEdit[$i]['nombre_condominio'] = $row['nombre_condominio'];
+                $usuarioEdit[$i]['alias'] = $row['alias'];
+                $usuarioEdit[$i]['activo'] = $row['activo'];
+                $i++;
+            }
+        }
+        return $usuarioEdit;
+       
+    }
+
+
+    public static function getLugar(){
+        $config = self::getConfig();
+        $usuarioEdit = array();
+        require ('connection/connectionMySql.php');
+            $i = 0;
+         
+            $connection = ConnectionMysql::getInstance()->getConnection();
+            $query = "SELECT * FROM lugar_evento where activo = 1";
+            $condominioQuery = mysqli_query($connection, $query);
+            while ($row = $condominioQuery->fetch_array()) {
+                $usuarioEdit[$i]['id_lugar'] = $row['id_lugar'];
+                $usuarioEdit[$i]['nombre_lugar'] = $row['nombre_lugar'];
+                $usuarioEdit[$i]['activo'] = $row['activo'];
+                $i++;
+            }
+        return $usuarioEdit;
+    }
+
 }
+
+
 
 ?>

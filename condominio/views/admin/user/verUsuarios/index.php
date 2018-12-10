@@ -24,7 +24,23 @@ if(! Loader::isLoggedIn($config['id_administrador'])) {
 $perfil = $config['id_administrador'];
 ?>
 <?php $usuariosList = Loader::listarUsuarios(); ?>
+<style>
+.status_ball {
+    display: inline-block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background: #999;
+}
 
+.status_dng {
+    background: #B00;
+}
+
+.status_ok {
+    background: #292;
+}
+</style>
 <section id="banner">
     <h2>Usuarios</h2>
 
@@ -38,6 +54,9 @@ $perfil = $config['id_administrador'];
                     <th class="text-center" style="font-size: 20px;">Email</th>
                     <th class="text-center" style="font-size: 20px;">username</th>
                     <th class="text-center" style="font-size: 20px;">Perffil</th>
+                    <th class="text-center" style="font-size: 20px;">Editar Usuario</th>
+                    <th class="text-center" style="font-size: 20px;">Desactivar</th>
+                    <th class="text-center" style="font-size: 20px;">Estado</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -48,7 +67,14 @@ $perfil = $config['id_administrador'];
                             <td style="font-size: 18px;"><?php echo $value['apellido'] ?></td>
                             <td style="font-size: 18px;"><?php echo $value['email'] ?></td>     
                             <td style="font-size: 18px;"><?php echo $value['username'] ?></td>                    
-                            <td style="font-size: 18px;"><?php echo $value['perfil'] ?></td>                
+                            <td style="font-size: 18px;"><?php echo $value['perfil'] ?></td>      
+                            <td style="font-size: 18px;"><a href="../editarUsuario/?id=<?php echo $value['id_usuario'] ?>">Editar</a></td>  
+                            <?php if($value['activo'] == 1){?>
+                                <td style="font-size: 18px;"><a style="cursor: pointer" onclick="desactivarUsuario('<?php echo $value['id_usuario']?>')"><span class="glyphicon glyphicon-remove"></span>Desactivar Usuario</a></td> 
+                            <?php }else{?>
+                                <td style="font-size: 18px;"><a style="cursor: pointer" onclick="activarUsuario('<?php echo $value['id_usuario']?>')"><span class="glyphicon glyphicon-remove"></span>Activar Usuario</a></td> 
+                            <?php }?>
+                            <td class="text-center"><?php echo Loader::getIconStatus('usuarios', $value['activo'])?></td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -62,7 +88,18 @@ $perfil = $config['id_administrador'];
     </div>
 </section>
 
-               
+<script type="text/javascript">
+    function desactivarUsuario(id) {
+        if(confirm('¿Está seguro de desactivar este usuario?')) {
+            document.location='../../../../controllers/admin/user/desactivar-usuario/desactivar-usuario.php?u='+id;
+        }
+    }
+    function activarUsuario(id) {
+        if(confirm('¿Está seguro de activar este usuario?')) {
+            document.location='../../../../controllers/admin/user/activar-usuario/activar-usuario.php?u='+id;
+        }
+    }
+</script>      
 
 
  

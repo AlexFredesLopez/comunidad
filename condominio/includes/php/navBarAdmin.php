@@ -16,8 +16,8 @@
                             <a href="#">Usuario</a>
                             <ul>
                                 <li><a href="<?php echo Loader::getUrlBase();?>views/admin/user/register-user/">Agregar Usuario</a></li>
-                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/user/editarUsuario/">Editar Usuario</a></li>
-                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/user/eliminarUsuario/">Eliminar Usuario</a></li>
+                                <!-- <li><a href="<?php //echo Loader::getUrlBase();?>views/admin/user/editarUsuario/">Editar Usuario</a></li>
+                                <li><a href="<?php //echo Loader::getUrlBase();?>views/admin/user/eliminarUsuario/">Eliminar Usuario</a></li> -->
                                 <li><a href="<?php echo Loader::getUrlBase();?>views/admin/user/verUsuarios/">Ver Usuarios</a></li>
                             </ul>
                         </li>
@@ -26,27 +26,16 @@
                             <a href="#">Condominio</a>
                             <ul>
                                 <li><a href="<?php echo Loader::getUrlBase();?>views/admin/condominio/agregarCondominio/">Agregar Condominio</a></li>
-                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/condominio/editarCondominio/">Editar Condominio</a></li>
-                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/condominio/eliminarCondominio/">Eliminar Condominio</a></li>
+                                <!-- <li><a href="<?php //echo Loader::getUrlBase();?>views/admin/condominio/editarCondominio/">Editar Condominio</a></li>
+                                <li><a href="<?php //echo Loader::getUrlBase();?>views/admin/condominio/eliminarCondominio/">Eliminar Condominio</a></li> -->
                                 <li><a href="<?php echo Loader::getUrlBase();?>views/admin/condominio/verCondominios/">Ver Condominio</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Propietario</a>
-                            <ul>
-                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/propietario/agregarPropietario/">Agregar Propietario</a></li>
-                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/propietario/editarPropietario/">Editar Propietario</a></li>
-                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/propietario/eliminarPropietario/">Eliminar Propietario</a></li>
-                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/propietario/verPropietarios/">Ver Propietario</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#">Tipo Vivienda</a>
                             <ul>
-                                <li><a href="#">Agregar Tipo Vivienda</a></li>
-                                <li><a href="#">Editar Tipo Vivienda</a></li>
-                                <li><a href="#">Eliminar Tipo Vivienda</a></li>
-                                <li><a href="#">Ver Tipo Vivienda</a></li>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/tipoVivienda/agregartipoVivienda/">Agregar Tipo Vivienda</a></li>
+                                <li><a href="<?php echo Loader::getUrlBase();?>views/admin/tipoVivienda/vertipoVivienda/">Ver Tipo Vivienda</a></li>
                             </ul>
                         </li>
 

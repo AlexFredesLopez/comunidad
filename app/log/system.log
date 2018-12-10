@@ -60,3 +60,28 @@
 [2018-11-23 23:24:19.000000 200.14.248.146  - Admin-Login ] Bienvenido Administrador
 [2018-11-23 23:25:58.000000 200.14.248.146  - User-Login ] Bienvenido Usuario
 [2018-11-25 03:02:27.000000 190.161.112.66  - User-Login ] Bienvenido Usuario
+[2018-11-26 22:48:35.000000 200.14.248.146  - User-Login ] Bienvenido Usuario
+[2018-11-26 22:49:14.000000 200.14.248.146  - Admin-Login ] Bienvenido Administrador
+[2018-11-28 13:56:46.000000 191.116.81.33  - Admin-Login ] Bienvenido Administrador
+[2018-11-28 14:40:36.000000 191.116.81.33  - Admin-Login ] Bienvenido Administrador
+[2018-11-28 16:22:44.000000 152.231.106.172  - Admin-Login ] Bienvenido Administrador
+[2018-11-29 13:01:06.000000 152.231.106.172  - Admin-Login ] Bienvenido Administrador
+[2018-11-29 13:49:13.000000 152.231.106.172  - Consultores-Login ] Usuario y/o clave incorrecto
+[2018-11-29 13:50:36.000000 152.231.106.172  - User-Login ] Bienvenido Usuario
+[2018-11-29 21:42:25.000000 186.9.13.25  - Consultores-Login ] Usuario y/o clave incorrecto
+[2018-11-29 21:42:27.000000 186.9.13.25  - Consultores-Login ] Usuario y/o clave incorrecto
+[2018-11-29 21:42:39.000000 186.9.13.25  - Admin-Login ] Bienvenido Administrador
+[2018-11-29 22:14:54.000000 191.116.145.249  - Admin-Login ] Bienvenido Administrador
+[2018-11-29 22:31:05.000000 191.116.145.249  - Admin-Login ] Bienvenido Administrador
+[2018-12-04 17:18:21.000000 186.9.18.30  - Consultores-Login ] Usuario y/o clave incorrecto
+[2018-12-04 17:18:32.000000 186.9.18.30  - Admin-Login ] Bienvenido Administrador
+[2018-12-09 23:10:59.000000 190.161.112.66  - Admin-Login ] Bienvenido Administrador
+[2018-12-10 03:13:29.000000 190.161.112.66  - Admin-Login ] Bienvenido Administrador
+[2018-12-10 05:04:20.000000 190.161.112.66  - User-Login ] Bienvenido Usuario
+[2018-12-10 06:07:18.000000 190.161.112.66  - Usuarios-Formulario de Registro ] You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 2
+[2018-12-10 06:07:34.000000 190.161.112.66  - Usuarios-Formulario de Registro ] You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 2
+[2018-12-10 06:07:56.000000 190.161.112.66  - Usuarios-Formulario de Registro ] You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 2
+[2018-12-10 06:31:02.000000 190.161.112.66  - Usuarios-Formulario de Registro ] You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' 9 )' at line 2
+[2018-12-10 06:35:05.000000 190.161.112.66  - Usuarios-Formulario de Registro ] 
+[2018-12-10 06:40:31.000000 190.161.112.66  - Usuarios-Formulario de Registro ] 
+[2018-12-10 06:40:55.000000 190.161.112.66  - Usuarios-Formulario de Registro ] 
